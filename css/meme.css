@@ -151,4 +151,11 @@
 
 @media (max-width: 768px) {
   .meme-container { padding: 16px; }
+  .meme-content { max-width: 100%; }
+  .question-container { padding: 28px 20px; }
+  .question-text { font-size: 1.2rem; margin-bottom: 24px; }
+  .yes-btn { padding: 14px 28px; font-size: 1.1rem; width: 100%; }
+  .yes-buttons { flex-direction: column; gap: 14px; }
+  .video-caption { font-size: 1.2rem; }
+  .video-wrapper { border-width: 2px; }
 }

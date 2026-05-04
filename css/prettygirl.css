@@ -61,11 +61,21 @@
 .pretty-quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 2vw, 1.4rem);
   color: var(--pretty-text-light);
   max-width: 600px;
   margin: 0 auto 48px;
   line-height: 1.8;
+}
+
+.pretty-quote p {
+  margin-bottom: 12px;
+}
+
+.pretty-quote p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--pretty-accent);
 }
 
 /* Photo Gallery */

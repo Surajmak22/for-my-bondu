@@ -150,6 +150,14 @@
 
 @media (max-width: 600px) {
   .music-player-card { flex-direction: column; }
-  .music-player-left { padding: 24px 24px 0; }
-  .music-player-right { padding: 24px; text-align: center; }
+  .music-player-left { padding: 20px 20px 0; }
+  .music-player-right { padding: 20px; text-align: center; }
+  .music-player-title { font-size: 1.8rem; }
+  .music-track-title { font-size: 1.2rem; }
+  .music-lyrics { font-size: 0.85rem; min-height: 60px; }
+  .music-controls { gap: 16px; }
+  .control-btn { font-size: 1.2rem; }
+  .play-btn { width: 44px; height: 44px; }
+  .music-player-container { margin-top: 40px; }
+  .progress-bar-container { height: 8px; }
 }
