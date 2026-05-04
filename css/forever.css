@@ -1,0 +1,81 @@
+/* ============================================
+   PAGE 5: FOREVER US — Vintage Romantic Red
+   ============================================ */
+
+#forever {
+  background: linear-gradient(160deg, var(--forever-bg-start) 0%, var(--forever-bg-end) 100%);
+  position: relative;
+}
+
+#forever::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rose-petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+
+.petal { position: absolute; font-size: 1rem; opacity: 0; animation: petalFall 8s ease-in infinite; }
+.petal:nth-child(1) { left: 5%; animation-delay: 0s; }
+.petal:nth-child(2) { left: 20%; animation-delay: 1.5s; font-size: 1.3rem; }
+.petal:nth-child(3) { left: 35%; animation-delay: 3s; font-size: 0.8rem; }
+.petal:nth-child(4) { left: 50%; animation-delay: 0.5s; }
+.petal:nth-child(5) { left: 65%; animation-delay: 2s; font-size: 1.2rem; }
+.petal:nth-child(6) { left: 80%; animation-delay: 4s; font-size: 0.9rem; }
+.petal:nth-child(7) { left: 92%; animation-delay: 1s; }
+.petal:nth-child(8) { left: 12%; animation-delay: 3.5s; font-size: 1.1rem; }
+
+@keyframes petalFall {
+  0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  100% { transform: translateY(110vh) rotate(720deg) translateX(100px); opacity: 0; }
+}
+
+.forever-content { position: relative; z-index: 2; max-width: 800px; width: 100%; text-align: center; }
+
+.ornament { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px; }
+.ornament-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--forever-accent)); }
+.ornament-line:last-child { background: linear-gradient(to left, transparent, var(--forever-accent)); }
+.ornament-icon { font-size: 1.2rem; color: var(--forever-accent); }
+
+.forever-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); color: var(--forever-text); margin-bottom: 12px; text-shadow: 0 2px 20px rgba(251, 191, 36, 0.2); }
+.forever-subtitle { font-family: var(--font-script); font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--forever-accent-soft); margin-bottom: 48px; }
+
+.love-reasons { text-align: left; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+.reason-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(251,191,36,0.15); border-radius: var(--radius-lg); transition: var(--transition-base); backdrop-filter: blur(8px); }
+.reason-item:hover { background: rgba(255,255,255,0.08); border-color: rgba(251,191,36,0.3); box-shadow: var(--shadow-glow-gold); transform: translateX(8px); }
+
+.reason-number { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--forever-accent); line-height: 1; min-width: 36px; }
+.reason-text { font-family: var(--font-handwritten); font-size: 1.2rem; color: var(--forever-text); line-height: 1.5; }
+
+.forever-footer { margin-top: 48px; }
+.forever-badge { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border: 2px solid var(--forever-accent); border-radius: var(--radius-full); font-family: var(--font-script); font-size: 1.2rem; color: var(--forever-accent); box-shadow: var(--shadow-glow-gold); }
+
+.forever-couple-photo {
+  margin: 40px auto 0;
+  max-width: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 4px solid var(--forever-accent-soft);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3), var(--shadow-glow-gold);
+  transform: rotate(-2deg);
+  transition: var(--transition-base);
+}
+.forever-couple-photo:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+.forever-couple-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .reason-item { padding: 16px 20px; }
+  .reason-number { font-size: 1.5rem; min-width: 28px; }
+  .ornament-line { width: 40px; }
+}

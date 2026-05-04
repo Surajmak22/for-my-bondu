@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You, My Love 💕</title>
+  <meta name="description" content="A romantic journey through our love story — made with all my heart.">
+  <meta name="theme-color" content="#ec4899">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/bondu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <!-- HTML2PDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/moments.css">
+  <link rel="stylesheet" href="css/prettygirl.css">
+  <link rel="stylesheet" href="css/forever.css">
+  <link rel="stylesheet" href="css/loveletter.css">
+  <link rel="stylesheet" href="css/lovestore.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/receipt.css">
+  <link rel="stylesheet" href="css/meme.css">
+  <link rel="stylesheet" href="css/musicplayer.css">
+
+  <!-- Favicon (heart emoji) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>💕</text></svg>">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION DOTS
+       ============================================ -->
+  <nav class="nav-dots" id="nav-dots" aria-label="Section navigation">
+    <button class="nav-dot active" data-section="hero" data-label="Welcome" aria-label="Go to Welcome"></button>
+    <button class="nav-dot" data-section="bondu" data-label="Bondu" aria-label="Go to Bondu"></button>
+    <button class="nav-dot" data-section="moments" data-label="Our Moments" aria-label="Go to Our Moments"></button>
+    <button class="nav-dot" data-section="pretty" data-label="My Pretty Girl" aria-label="Go to My Pretty Girl"></button>
+    <button class="nav-dot" data-section="forever" data-label="Forever Us" aria-label="Go to Forever Us"></button>
+    <button class="nav-dot" data-section="letter" data-label="Love Letter" aria-label="Go to Love Letter"></button>
+    <button class="nav-dot" data-section="store" data-label="Love Store" aria-label="Go to Love Store"></button>
+    <button class="nav-dot" data-section="checkout" data-label="Checkout" aria-label="Go to Checkout"></button>
+    <button class="nav-dot" data-section="meme" data-label="The End" aria-label="Go to The End"></button>
+  </nav>
+
+  <!-- Removed old sticky music player -->
+
+  <!-- ============================================
+       FLOATING CART
+       ============================================ -->
+  <div class="floating-cart" id="floating-cart" aria-label="View cart">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+
+  <!-- ============================================
+       PAGE 1: HERO — Welcome
+       ============================================ -->
+  <section id="hero" class="page-section">
+    <!-- Floating Hearts -->
+    <div class="hero-particles">
+      <span class="hero-particle">💕</span>
+      <span class="hero-particle">❤️</span>
+      <span class="hero-particle">🩷</span>
+      <span class="hero-particle">💗</span>
+      <span class="hero-particle">✨</span>
+      <span class="hero-particle">💖</span>
+      <span class="hero-particle">🌸</span>
+      <span class="hero-particle">💕</span>
+      <span class="hero-particle">❤️</span>
+      <span class="hero-particle">💗</span>
+    </div>
+
+    <!-- Sparkle Overlay -->
+    <div class="hero-sparkles"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-heart">💕</span>
+        <span>Welcome to Our Love Story</span>
+      </div>
+
+      <h1 class="hero-title reveal reveal-delay-1">
+        Hello, <span class="highlight">Bondu</span>
+      </h1>
+
+      <p class="hero-subtitle reveal reveal-delay-2">
+        This is for you ✨
+      </p>
+
+      <div class="hero-quote reveal reveal-delay-3">
+        <span class="typewriter-text" data-text="Every love story is beautiful, but ours is my favorite..."></span>
+      </div>
+
+      <a href="#bondu" class="hero-cta reveal reveal-delay-4" id="hero-cta-btn">
+        <span>Enter Our World</span>
+        <span class="cta-arrow">↓</span>
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 2: BONDU — Floral Scrapbook
+       ============================================ -->
+  <section id="bondu" class="page-section">
+    <!-- Floral Corners -->
+    <span class="floral-corner top-left">🌸</span>
+    <span class="floral-corner top-right">🌺</span>
+    <span class="floral-corner bottom-left">🌷</span>
+    <span class="floral-corner bottom-right">🌻</span>
+
+    <div class="bondu-content">
+      <div class="bondu-header reveal">
+        <h2 class="bondu-title">Bondu</h2>
+        <p class="bondu-subtitle">My favorite person in the whole world 🌍</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <div class="polaroid reveal reveal-delay-1">
+          <div class="polaroid-image">
+            <img src="photos/IMG_20260504_161538.jpg" alt="Our adventure together" loading="lazy">
+          </div>
+          <span class="polaroid-caption">i love you my bondu 💕</span>
+        </div>
+
+        <div class="polaroid reveal reveal-delay-2">
+          <div class="polaroid-image">
+            <img src="photos/IMG_20260504_162128.jpg" alt="Together at the temple" loading="lazy">
+          </div>
+          <span class="polaroid-caption">That perfect day ✨</span>
+        </div>
+
+        <div class="polaroid reveal reveal-delay-3">
+          <div class="polaroid-image">
+            <img src="photos/IMG_20260214_173727.jpg" alt="Always so stunning" loading="lazy">
+          </div>
+          <span class="polaroid-caption">Always so stunning 💙</span>
+        </div>
+
+        <div class="polaroid reveal reveal-delay-4">
+          <div class="polaroid-image">
+            <img src="photos/IMG_20260504_162103.jpg" alt="Us at the temple" loading="lazy">
+          </div>
+          <span class="polaroid-caption">Always by your side 🌸</span>
+        </div>
+
+        <div class="polaroid reveal reveal-delay-5">
+          <div class="polaroid-image">
+            <div class="photo-placeholder">Waiting for photo 5 📸</div>
+          </div>
+          <span class="polaroid-caption">More memories to come ✨</span>
+        </div>
+
+        <div class="polaroid reveal reveal-delay-6">
+          <div class="polaroid-image">
+            <div class="photo-placeholder">Waiting for photo 6 📸</div>
+          </div>
+          <span class="polaroid-caption">Forever and always ❤️</span>
+        </div>
+      </div>
+
+      <div class="bondu-divider">✿ ❀ ✿</div>
+
+      <p class="bondu-message reveal">
+        You make every ordinary moment feel like a beautiful memory worth keeping forever. 🌸
+      </p>
+
+      <!-- ============================================
+           NEW CENTRAL MUSIC PLAYER
+           ============================================ -->
+      <div class="music-player-container reveal reveal-delay-2">
+        <h3 class="music-player-title">Our Soundtrack 🎶</h3>
+        <div class="music-player-card">
+          <div class="music-player-left">
+            <div class="music-cover-wrapper">
+              <img id="music-cover" src="photos/music%20player%20photo%20to%20use/IMG_20260504_162103.jpg" alt="Song Cover">
+            </div>
+          </div>
+          <div class="music-player-right">
+            <h4 id="music-title" class="music-track-title">Loading Song...</h4>
+            <div class="music-lyrics" id="music-lyrics">
+              <p>Loading lyrics...</p>
+            </div>
+            
+            <div class="music-progress">
+              <span id="music-current-time">0:00</span>
+              <div class="progress-bar-container" id="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+              <span id="music-duration">0:00</span>
+            </div>
+
+            <div class="music-controls">
+              <button id="btn-prev" class="control-btn" aria-label="Previous">⏮</button>
+              <button id="btn-play-pause" class="control-btn play-btn" aria-label="Play/Pause">▶</button>
+              <button id="btn-next" class="control-btn" aria-label="Next/Fast Forward">⏭</button>
+            </div>
+          </div>
+        </div>
+        <audio id="main-audio-player"></audio>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 3: OUR MOMENTS — Blue Dreamy
+       ============================================ -->
+  <section id="moments" class="page-section">
+    <!-- Starry Sky -->
+    <div class="moments-stars">
+      <div class="star"></div><div class="star"></div><div class="star"></div>
+      <div class="star"></div><div class="star"></div><div class="star"></div>
+      <div class="star"></div><div class="star"></div><div class="star"></div>
+      <div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="moments-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <div class="moments-content">
+      <div class="moments-header reveal">
+        <h2 class="moments-title">Our Moments ✨</h2>
+        <p class="moments-subtitle">The little things that mean everything</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-card">
+            <span class="timeline-date">5 may 2026 at 10.09 am IST and 10.24 am of npt time</span>
+            <h3 class="timeline-card-title">When It All Began 💫</h3>
+            <p class="timeline-card-text">since that day my luck has just so much better cause having you on my side is me being lucky and you just make my everyday better by being on it</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-card">
+            <span class="timeline-date">first time we saw each other</span>
+            <h3 class="timeline-card-title">Butterflies Everywhere 🦋</h3>
+            <p class="timeline-card-text">i was so nervous i saw you and my heartbeat was so much fast you running to me and our first hug and that forhead kiss ( ha but still i wonder ki meri barbie gir kaise nahi gayi ? 🤣 )</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-card">
+            <span class="timeline-date">three words first feeling</span>
+            <h3 class="timeline-card-title">Three Words, One Feeling 💕</h3>
+            <p class="timeline-card-text">the day when i confessed that i love you and i got to hear same from you OMGGGGGGGGGGGGGGGGGGGGGG what a feeling it was i was so happy and i am still to nowday</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-4">
+          <div class="timeline-card">
+            <span class="timeline-date">falling deeper</span>
+            <h3 class="timeline-card-title">Falling Deeper 🌊</h3>
+            <p class="timeline-card-text">i am always obessed with you remeber that you are so beutiful my wifey and you are everything i want just come here soon please</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 4: MY PRETTY GIRL — Minimal Clean
+       ============================================ -->
+  <section id="pretty" class="page-section">
+    <div class="pretty-content">
+      <span class="pretty-label reveal">To the most gorgeous girl</span>
+      <h2 class="pretty-title reveal reveal-delay-1">
+        My <em>Pretty</em> Girl
+      </h2>
+
+      <div class="pretty-divider reveal reveal-delay-2"></div>
+
+      <div class="pretty-quote reveal reveal-delay-2">
+        <p>i wasnt confident much you made me</p>
+        <p>i wasnt as healthy you made me look after myself</p>
+        <p>i didnt had that peace of mind which you gave me with your love kindess and care</p>
+        <p>but one thing i am sure now is that we are going to get married no matter what and you will be "BADI BAHU" Of this family 😘</p>
+      </div>
+
+      <div class="pretty-gallery">
+        <div class="pretty-photo reveal-scale reveal-delay-1">
+          <img src="photos/IMG_20260504_154917.jpg" alt="Dreamy portrait" loading="lazy">
+        </div>
+        <div class="pretty-photo reveal-scale reveal-delay-2">
+          <img src="photos/Screenshot_20260504_162709.jpg" alt="Beautiful" loading="lazy">
+        </div>
+        <div class="pretty-photo reveal-scale reveal-delay-3">
+          <img src="photos/IMG_20260504_162525.jpg" alt="Stunning" loading="lazy">
+        </div>
+      </div>
+
+      <div class="pretty-compliments reveal">
+        <span class="compliment-tag">Bondu 💕</span>
+        <span class="compliment-tag">Beautiful ✨</span>
+        <span class="compliment-tag">Kind 💛</span>
+        <span class="compliment-tag">Smart 🧠</span>
+        <span class="compliment-tag">Funny 😂</span>
+        <span class="compliment-tag">Strong 💪</span>
+        <span class="compliment-tag">Caring 🤗</span>
+        <span class="compliment-tag">Perfect 💕</span>
+        <span class="compliment-tag">My Everything 🌍</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 5: FOREVER US — Vintage Red
+       ============================================ -->
+  <section id="forever" class="page-section">
+    <!-- Rose Petals -->
+    <div class="rose-petals">
+      <span class="petal">🌹</span><span class="petal">🥀</span>
+      <span class="petal">🌹</span><span class="petal">🌹</span>
+      <span class="petal">🥀</span><span class="petal">🌹</span>
+      <span class="petal">🌹</span><span class="petal">🥀</span>
+    </div>
+
+    <div class="forever-content">
+      <div class="ornament reveal">
+        <span class="ornament-line"></span>
+        <span class="ornament-icon">♔</span>
+        <span class="ornament-line"></span>
+      </div>
+
+      <h2 class="forever-title reveal reveal-delay-1">Forever Us</h2>
+      <p class="forever-subtitle reveal reveal-delay-2">Reasons I'm so in love with you</p>
+
+      <div class="love-reasons">
+        <div class="reason-item reveal reveal-delay-1">
+          <span class="reason-number">1</span>
+          <span class="reason-text">Your smile lights up my entire universe. Every single time. Without fail. 🌟</span>
+        </div>
+        <div class="reason-item reveal reveal-delay-2">
+          <span class="reason-number">2</span>
+          <span class="reason-text">the way you handle me and makes my overthinking calm i am so thankful to it my bondu { lekin app kaleshi to ho } 😄</span>
+        </div>
+        <div class="reason-item reveal reveal-delay-3">
+          <span class="reason-text">You make even the most boring days feel like an adventure worth living. 🌈</span>
+        </div>
+        <div class="reason-item reveal reveal-delay-4">
+          <span class="reason-text">Your heart is the most beautiful place I've ever called home. 🏡</span>
+        </div>
+        <div class="reason-item reveal reveal-delay-5">
+          <span class="reason-text">Because you're you — and that's more than enough. That's everything. 💕</span>
+        </div>
+      </div>
+
+      <div class="forever-couple-photo reveal reveal-delay-5">
+        <img src="photos/IMG_20260504_162116.jpg" alt="Us together" loading="lazy">
+      </div>
+
+      <div class="forever-footer reveal">
+        <div class="forever-badge">
+          👑 You & Me, Forever 👑
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 6: LOVE LETTER — Handwritten
+       ============================================ -->
+  <section id="letter" class="page-section">
+    <div class="letter-content">
+      <!-- Envelope -->
+      <div class="envelope-container reveal">
+        <div class="envelope">
+          <div class="envelope-front">
+            <p class="envelope-text">To: The Love of My Life 💌</p>
+          </div>
+          <div class="wax-seal">💕</div>
+        </div>
+      </div>
+
+      <!-- Letter -->
+      <div class="letter-paper reveal reveal-delay-2">
+        <!-- Ink Blots -->
+        <div class="ink-blot">✦</div>
+        <div class="ink-blot">✦</div>
+
+        <p class="letter-date">Written with love, today and always</p>
+
+        <h3 class="letter-greeting">My Dearest Wifey, ❤️</h3>
+
+        <div class="letter-body">
+          <p>I am truly so thankful to God for giving me you. Every single day, I feel proud and lucky to have you in my life. Waking up every morning feels fresh and stress-free because I know I have you beside me.</p>
+
+          <p>And look at us... we just completed <strong>365 days</strong> together — that's <strong>8,760 hours</strong>, <strong>525,600 minutes</strong>, and <strong>31,536,000 seconds</strong> of us. Just think about it, buddhu... how fast time flies. 🥺</p>
+
+          <p>But this is only the beginning. There are so many more years to come where I'll annoy you even more, and with age, of course, you'll have to handle me more too. 😌 I still can't believe how far we've come. For others, it may be "just one year," but for me, it feels like I've known you forever.</p>
+
+          <p>The way you handle me, love me, care for me, calm my overthinking, and stay beside me through every high and low... I'm endlessly thankful for all of it. From our first kiss, first hug, that painful airport goodbye, to all our endless laughter — you've given me so many beautiful memories and so much happiness. And honestly, this is just 1% of what's waiting for us in the future.</p>
+
+          <p>Because I want to grow old with you. Even if you become more like a mosquito and keep sucking my blood, it's fine... because you'll still be my Bondu. 😘</p>
+
+          <p>Not just me, but my whole family is so happy to have you. Everyone is eagerly waiting to welcome you with love. In just this one year, you've given me so much, my love, and I promise I'll always give you even more in return. I will always love you, always choose you, and yes — I will marry you. ❤️</p>
+
+          <p>We'll have kids <strong>very soon</strong> (adoption kids too 😘), we'll travel the world together, grow together, and grow old together. And always remember one thing: there is absolutely nothing I would change about you. The way you are right now is exactly why I fell in love with my Bondu girl. So please embrace yourself — your smile, your body, your heart, everything about you. Because to me, you are perfect.</p>
+
+          <p>And yes... you are my super hotttttie, sexyyyyy wifey. 🤤 Parents meetings bhi attend karni hain na, toh figure maintain rakhna padega — <strong>don't worry about that, I'll help you. 😉😘</strong></p>
+
+          <p>This is only the beginning of our forever together. There's still so much love, laughter, chaos, and happiness waiting for us. Just remember: your Barba will never change. He loves you today, tomorrow, and forever. I miss you every single day, even if I don't always say it. And yes, I'm completely obsessed with you. 🤤</p>
+
+          <p>So please don't stress, don't overthink, and always stay with me. (Ameeeeeeen bol dena warna boti boti kar duga 😤😂) Just stay healthy, take care of yourself, and leave the rest to me.</p>
+        </div>
+
+        <p class="letter-closing">I love you endlessly, my love. ❤️<br>With all my heart and countless kisses,</p>
+        <p class="letter-signature">Your Complaint Box 😘</p>
+      </div>
+
+      <div class="letter-actions" style="text-align: center; margin-top: 30px;">
+        <button id="download-letter-btn" class="checkout-btn" style="width: auto; padding: 12px 30px; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(244,63,94,0.3);">
+          ⬇️ Download Love Letter (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 7: LOVE STORE — Shopping
+       ============================================ -->
+  <section id="store" class="page-section">
+    <div class="store-content">
+      <div class="store-header reveal">
+        <h2 class="store-title">The <span class="store-neon">Love Store</span> 🏪</h2>
+        <p class="store-subtitle">Everything's free when it's made with love ✨</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- Item 1 -->
+        <div class="product-card reveal reveal-delay-1" data-id="hugs" data-name="Warm Hugs" data-emoji="🤗" data-price="Free forever">
+          <span class="product-emoji">🤗</span>
+          <h3 class="product-name">Warm Hugs</h3>
+          <p class="product-desc">Unlimited supply. Extra tight on bad days.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-hugs">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="product-card reveal reveal-delay-2" data-id="kisses" data-name="Sweet Kisses" data-emoji="💋" data-price="Free forever">
+          <span class="product-emoji">💋</span>
+          <h3 class="product-name">Sweet Kisses</h3>
+          <p class="product-desc">Forehead, cheek, and nose varieties available.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-kisses">🛒 Add to Cart</button>
+          </div>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="product-card reveal reveal-delay-3" data-id="cuddles" data-name="Cuddle Session" data-emoji="🥰" data-price="Free forever">
+          <div class="product-emoji">🥰</div>
+          <h3 class="product-name">Cuddle Session</h3>
+          <p class="product-desc">Unlimited time wrapped in your arms.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-cuddles">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="product-card reveal reveal-delay-4" data-id="kids" data-name="Kids" data-emoji="👶" data-price="Priceless">
+          <div class="product-emoji">👶</div>
+          <h3 class="product-name">Kids</h3>
+          <p class="product-desc">Adoption or our own, a beautiful family.</p>
+          <div class="product-footer">
+            <span class="product-price">Priceless</span>
+            <button class="add-to-cart-btn" id="btn-kids">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="product-card reveal reveal-delay-5" data-id="belt" data-name="Belt Se Marna" data-emoji="💥" data-price="Desi Style">
+          <div class="product-emoji">💥</div>
+          <h3 class="product-name">Belt Se Marna</h3>
+          <p class="product-desc">Strict wifey treatment for my mistakes.</p>
+          <div class="product-footer">
+            <span class="product-price">Desi Style</span>
+            <button class="add-to-cart-btn" id="btn-belt">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="product-card reveal reveal-delay-6" data-id="jhaadu" data-name="Jhaadu Se Kutai" data-emoji="🧹" data-price="Ouch!">
+          <div class="product-emoji">🧹</div>
+          <h3 class="product-name">Jhaadu Se Kutai</h3>
+          <p class="product-desc">When I annoy you way too much.</p>
+          <div class="product-footer">
+            <span class="product-price">Ouch!</span>
+            <button class="add-to-cart-btn" id="btn-jhaadu">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="product-card reveal reveal-delay-4" data-id="forehead" data-name="Forehead Kisses" data-emoji="😘" data-price="Free forever">
+          <span class="product-emoji">😘</span>
+          <h3 class="product-name">Forehead Kisses</h3>
+          <p class="product-desc">The "I'll protect you forever" kind.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-forehead2">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="product-card reveal reveal-delay-5" data-id="handhold" data-name="Hand Holds" data-emoji="🤝" data-price="Free forever">
+          <span class="product-emoji">🤝</span>
+          <h3 class="product-name">Hand Holds</h3>
+          <p class="product-desc">Through every walk, every storm, every adventure.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-handhold">🛒 Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="product-card reveal reveal-delay-6" data-id="movienight" data-name="Movie Nights" data-emoji="🍿" data-price="Free forever">
+          <span class="product-emoji">🍿</span>
+          <h3 class="product-name">Movie Nights</h3>
+          <p class="product-desc">Includes popcorn, blanket fort, and you by my side.</p>
+          <div class="product-footer">
+            <span class="product-price">Free forever</span>
+            <button class="add-to-cart-btn" id="btn-movienight">🛒 Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 8: CHECKOUT — Password System
+       ============================================ -->
+  <section id="checkout" class="page-section">
+    <div class="checkout-content">
+      <div class="checkout-header reveal">
+        <h2 class="checkout-title">Checkout 💝</h2>
+        <p class="checkout-subtitle">One last step to claim your love...</p>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary reveal reveal-delay-1">
+        <h3 class="cart-summary-title">🛒 Your Cart</h3>
+        <div id="cart-items-list">
+          <p style="text-align:center;color:#9ca3af;font-family:var(--font-handwritten);padding:20px;">Your cart is empty — go add some love! 💔</p>
+        </div>
+      </div>
+
+      <!-- Calendar Form -->
+      <div class="password-form reveal reveal-delay-2" id="checkout-form">
+        <label class="password-label">Pick Our Special Date 💕</label>
+        <p class="password-hint">Tap the calendar and find the day our story began 🗓️</p>
+
+        <div class="calendar-trigger-wrap">
+          <button class="calendar-trigger-btn" id="calendar-trigger-btn" type="button">
+            <span class="cal-icon">📅</span>
+            <span class="cal-display" id="cal-display">Choose a date...</span>
+            <span class="password-heart" id="password-heart">🤍</span>
+          </button>
+
+          <!-- Mini Calendar Popup -->
+          <div class="mini-calendar" id="mini-calendar" aria-hidden="true">
+            <div class="cal-header">
+              <button class="cal-nav" id="cal-prev" aria-label="Previous month">‹</button>
+              <span class="cal-month-year" id="cal-month-year"></span>
+              <button class="cal-nav" id="cal-next" aria-label="Next month">›</button>
+            </div>
+            <div class="cal-weekdays">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span>
+              <span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="cal-days" id="cal-days"></div>
+          </div>
+        </div>
+
+        <p class="password-error-msg" id="password-error"></p>
+
+        <button class="checkout-btn" id="checkout-btn" disabled>
+          💕 Unlock with Love
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 9: RECEIPT — Paid with Love
+       ============================================ -->
+  <section id="receipt" class="page-section">
+    <div class="receipt-content reveal">
+      <div class="receipt-paper">
+        <h2 class="receipt-store-name">Love Store™</h2>
+        <p class="receipt-store-tagline">Where everything is free & love is the only currency</p>
+
+        <hr class="receipt-divider">
+
+        <div class="receipt-info">
+          <span>Receipt <span id="receipt-number">#LOVE-0000</span></span>
+          <span id="receipt-date">--/--/----</span>
+        </div>
+        <div class="receipt-info">
+          <span>Customer: My Love 💕</span>
+          <span id="receipt-time">--:--</span>
+        </div>
+
+        <hr class="receipt-divider">
+
+        <div class="receipt-items" id="receipt-items-list">
+          <!-- Items generated dynamically -->
+        </div>
+
+        <hr class="receipt-divider">
+
+        <div class="receipt-totals">
+          <div class="receipt-total-row">
+            <span>Subtotal</span><span>∞ Love</span>
+          </div>
+          <div class="receipt-total-row">
+            <span>Tax</span><span>0% (love is tax-free)</span>
+          </div>
+          <div class="receipt-total-row">
+            <span>Discount</span><span>-0 (already free!)</span>
+          </div>
+          <div class="receipt-total-row grand-total">
+            <span>TOTAL</span><span>∞ Love</span>
+          </div>
+        </div>
+
+        <hr class="receipt-divider">
+
+        <div class="receipt-payment">
+          <p class="receipt-payment-method">💕 Paid with Love ❤️</p>
+        </div>
+
+        <div class="receipt-barcode">
+          <div class="receipt-barcode-lines">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p>ILU-4EVER-AND-ALWAYS</p>
+        </div>
+
+        <hr class="receipt-divider">
+
+        <div class="receipt-footer">
+          <p class="heart-text">♥ ♥ ♥</p>
+          <p>Thank you for shopping at Love Store!</p>
+          <p>No returns, no refunds — because this love is forever.</p>
+          <p class="heart-text">♥ ♥ ♥</p>
+        </div>
+      </div>
+      
+      <div class="receipt-actions" id="receipt-actions" style="text-align: center; margin-top: 30px;">
+        <button id="download-receipt-btn" class="checkout-btn" style="width: auto; padding: 12px 30px; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(244,63,94,0.3);">
+          ⬇️ Download Receipt (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       PAGE 10: FINAL — One Question To Ask
+       ============================================ -->
+  <section id="meme" class="page-section">
+    <!-- Confetti -->
+    <div class="meme-confetti">
+      <div class="confetti-piece"></div><div class="confetti-piece"></div>
+      <div class="confetti-piece"></div><div class="confetti-piece"></div>
+      <div class="confetti-piece"></div><div class="confetti-piece"></div>
+      <div class="confetti-piece"></div><div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+    </div>
+
+    <div class="meme-content">
+      <div class="meme-header reveal">
+        <h2 class="meme-title">One Question To Ask 🤔</h2>
+      </div>
+
+      <div class="question-container reveal reveal-delay-1" id="question-container">
+        <p class="question-text">Do you think I am scared of you? 😏</p>
+        <div class="yes-buttons">
+          <button class="yes-btn" id="yes-btn-1">✅ YES</button>
+          <button class="yes-btn" id="yes-btn-2">✅ YES (obviously!)</button>
+        </div>
+      </div>
+
+      <!-- Hidden Video Container -->
+      <div class="video-reveal-container" id="video-reveal" style="display: none;">
+        <p class="video-caption reveal">Here's your answer... 😂💕</p>
+        <div class="video-wrapper">
+          <video id="reveal-video" controls playsinline>
+            <!-- Put your video file in the photos folder and update the src -->
+            <source src="photos/meme_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="site-footer reveal reveal-delay-3">
+        <p>Made with <span class="footer-heart">❤️</span> just for you</p>
+        <p style="font-size: 0.9rem; margin-top: 8px; opacity: 0.5;">— Your Person, forever and always 💕</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/musicplayer.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/checkout.js"></script>
+
+</body>
+</html>

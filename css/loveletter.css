@@ -1,0 +1,91 @@
+/* ============================================
+   PAGE 6: LOVE LETTER — Handwritten Emotional
+   ============================================ */
+
+#letter {
+  background: var(--letter-bg);
+  position: relative;
+}
+
+.letter-content { position: relative; z-index: 2; max-width: 650px; width: 100%; }
+
+/* Envelope */
+.envelope-container { perspective: 1000px; margin-bottom: 0; }
+
+.envelope { position: relative; width: 100%; max-width: 500px; margin: 0 auto 32px; }
+
+.envelope-front {
+  background: linear-gradient(135deg, #e8d5c0, #dbc4a8);
+  border-radius: 8px;
+  padding: 40px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.envelope-front::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(135deg, transparent 48%, #d4b896 48%, #d4b896 52%, transparent 52%),
+              linear-gradient(-135deg, transparent 48%, #d4b896 48%, #d4b896 52%, transparent 52%);
+  opacity: 0.3;
+}
+
+.envelope-text { font-family: var(--font-handwritten); font-size: 1.3rem; color: var(--letter-ink); position: relative; z-index: 1; }
+
+/* Wax Seal */
+.wax-seal {
+  width: 60px; height: 60px;
+  background: radial-gradient(circle at 35% 35%, #d32f2f, #b71c1c);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: -20px auto 0;
+  position: relative; z-index: 5;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.3), inset 0 -2px 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.wax-seal:hover { transform: scale(1.1) rotate(5deg); }
+
+/* Letter Paper */
+.letter-paper {
+  background: var(--letter-paper);
+  border-radius: 4px;
+  padding: 48px 40px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  position: relative;
+  min-height: 400px;
+  background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(59, 47, 30, 0.08) 31px, rgba(59, 47, 30, 0.08) 32px);
+  background-position-y: 16px;
+}
+
+.letter-paper::before {
+  content: '';
+  position: absolute; left: 48px; top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(194, 24, 91, 0.15);
+}
+
+.letter-date { font-family: var(--font-handwritten-alt); font-size: 0.9rem; color: var(--letter-ink-light); text-align: right; margin-bottom: 24px; }
+
+.letter-greeting { font-family: var(--font-handwritten); font-size: 1.8rem; color: var(--letter-accent); margin-bottom: 20px; }
+
+.letter-body p { font-family: var(--font-handwritten-alt); font-size: 1.1rem; color: var(--letter-ink); line-height: 2; margin-bottom: 16px; }
+
+.letter-closing { font-family: var(--font-handwritten); font-size: 1.4rem; color: var(--letter-accent); margin-top: 32px; }
+
+.letter-signature { font-family: var(--font-script); font-size: 2rem; color: var(--letter-ink); margin-top: 12px; }
+
+/* Ink Blots */
+.ink-blot { position: absolute; opacity: 0.04; font-size: 3rem; pointer-events: none; }
+.ink-blot:nth-child(1) { top: 20%; right: 10%; transform: rotate(30deg); }
+.ink-blot:nth-child(2) { bottom: 15%; left: 5%; transform: rotate(-20deg); }
+
+@media (max-width: 768px) {
+  .letter-paper { padding: 32px 24px; background-position-y: 12px; }
+  .letter-paper::before { left: 24px; }
+  .envelope-front { padding: 28px; }
+}

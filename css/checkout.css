@@ -1,0 +1,111 @@
+/* ============================================
+   PAGE 8: CHECKOUT — Warm Anniversary Password
+   ============================================ */
+
+#checkout {
+  background: linear-gradient(180deg, var(--checkout-bg) 0%, #fff7ed 100%);
+  position: relative;
+}
+
+.checkout-content { position: relative; z-index: 2; max-width: 500px; width: 100%; }
+
+.checkout-header { text-align: center; margin-bottom: 40px; }
+.checkout-title { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); color: var(--checkout-text); margin-bottom: 8px; }
+.checkout-subtitle { font-family: var(--font-handwritten); font-size: 1.2rem; color: var(--checkout-accent); }
+
+/* Cart Summary */
+.cart-summary {
+  background: white; border-radius: var(--radius-lg); padding: 28px;
+  box-shadow: var(--shadow-soft); border: 1px solid rgba(244,63,94,0.1); margin-bottom: 32px;
+}
+
+.cart-summary-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--checkout-text); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px dashed rgba(0,0,0,0.1); }
+
+.cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 0.95rem; color: var(--checkout-text); }
+.cart-item-emoji { margin-right: 8px; }
+
+.cart-total-row { display: flex; justify-content: space-between; padding: 16px 0 0; margin-top: 12px; border-top: 2px solid rgba(0,0,0,0.1); font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--checkout-accent); }
+
+/* Password Form */
+.password-form {
+  background: white; border-radius: var(--radius-lg); padding: 32px;
+  box-shadow: var(--shadow-soft); border: 1px solid rgba(244,63,94,0.1); text-align: center;
+}
+
+.password-label { font-family: var(--font-handwritten); font-size: 1.3rem; color: var(--checkout-text); margin-bottom: 8px; display: block; }
+.password-hint { font-size: 0.85rem; color: #9ca3af; margin-bottom: 20px; }
+
+/* Calendar UI */
+.calendar-trigger-wrap { position: relative; margin-bottom: 20px; text-align: left; }
+
+.calendar-trigger-btn {
+  width: 100%; padding: 16px 52px 16px 20px;
+  border: 2px solid #e5e7eb; border-radius: var(--radius-md);
+  font-family: var(--font-sans); font-size: 1.1rem;
+  background: #fafafa; color: var(--checkout-text);
+  display: flex; align-items: center; gap: 12px;
+  transition: var(--transition-base); cursor: pointer;
+}
+.calendar-trigger-btn:hover { border-color: var(--checkout-accent); background: white; }
+.calendar-trigger-btn.active { border-color: var(--checkout-accent); background: white; box-shadow: 0 0 0 4px rgba(244,63,94,0.1); }
+.calendar-trigger-btn.success { border-color: var(--checkout-success); }
+.calendar-trigger-btn.error { border-color: #ef4444; animation: shake 0.5s ease; }
+
+.password-heart { position: absolute; right: 16px; top: 16px; font-size: 1.2rem; transition: var(--transition-base); pointer-events: none; }
+.password-heart.valid { animation: pulse 0.5s ease; color: var(--checkout-success); }
+
+/* Mini Calendar Popup */
+.mini-calendar {
+  position: absolute; top: 100%; left: 0; right: 0; margin-top: 8px;
+  background: white; border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg); border: 1px solid rgba(244,63,94,0.1);
+  padding: 16px; z-index: 10; opacity: 0; pointer-events: none;
+  transform: translateY(-10px); transition: var(--transition-base);
+}
+.mini-calendar.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.cal-nav { background: #f3f4f6; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--checkout-text); transition: var(--transition-base); }
+.cal-nav:hover { background: #e5e7eb; color: var(--checkout-accent); }
+.cal-month-year { font-family: var(--font-serif); font-weight: 600; color: var(--checkout-text); }
+
+.cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-size: 0.75rem; font-weight: 600; color: #9ca3af; margin-bottom: 8px; }
+.cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-day {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: var(--checkout-text); cursor: pointer;
+  border-radius: 50%; transition: var(--transition-base);
+}
+.cal-day:hover:not(.empty) { background: #fdf2f8; color: var(--checkout-accent); }
+.cal-day.selected { background: var(--checkout-accent); color: white; font-weight: 600; box-shadow: 0 4px 10px rgba(244,63,94,0.3); }
+.cal-day.empty { cursor: default; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.password-error-msg {
+  font-family: var(--font-handwritten); font-size: 1rem; color: #ef4444;
+  margin-bottom: 16px; opacity: 0; transition: opacity 0.3s ease; height: 1.5em;
+}
+.password-error-msg.show { opacity: 1; }
+
+.checkout-btn {
+  width: 100%; padding: 16px;
+  background: linear-gradient(135deg, var(--checkout-accent), #e11d48);
+  color: white; border-radius: var(--radius-md);
+  font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 16px rgba(244,63,94,0.3);
+}
+.checkout-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,63,94,0.4); }
+.checkout-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Confetti Canvas */
+.confetti-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+
+@media (max-width: 768px) {
+  .cart-summary, .password-form { padding: 24px 20px; }
+}

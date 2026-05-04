@@ -1,0 +1,110 @@
+/* ============================================
+   PAGE 7: LOVE STORE — Playful Pink Storefront
+   ============================================ */
+
+#store {
+  background: linear-gradient(180deg, var(--store-bg) 0%, #fce7f3 100%);
+  position: relative;
+}
+
+.store-content { position: relative; z-index: 2; max-width: 900px; width: 100%; }
+
+.store-header { text-align: center; margin-bottom: 48px; }
+
+.store-title {
+  font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); color: var(--store-text); margin-bottom: 8px;
+}
+
+.store-neon {
+  color: var(--store-neon);
+  text-shadow: 0 0 10px rgba(244,114,182,0.5), 0 0 20px rgba(244,114,182,0.3), 0 0 40px rgba(244,114,182,0.2);
+  animation: neonFlicker 3s ease-in-out infinite;
+}
+
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; } 92% { opacity: 1; } 93% { opacity: 0.8; } 94% { opacity: 1; } 96% { opacity: 0.9; } 97% { opacity: 1; }
+}
+
+.store-subtitle { font-family: var(--font-handwritten); font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--store-text-light); }
+
+/* Product Grid */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 32px; }
+
+.product-card {
+  background: var(--store-card); border-radius: var(--radius-lg); padding: 28px 24px; text-align: center;
+  border: 1px solid rgba(236,72,153,0.1); transition: var(--transition-base); position: relative; overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(236,72,153,0.2); }
+
+.product-emoji { font-size: 3rem; margin-bottom: 16px; display: block; transition: transform 0.3s ease; }
+.product-card:hover .product-emoji { transform: scale(1.2); }
+
+.product-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--store-text); margin-bottom: 8px; }
+.product-desc { font-size: 0.85rem; color: var(--store-text-light); margin-bottom: 16px; line-height: 1.5; flex-grow: 1; }
+.product-footer { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.product-price { font-family: var(--font-handwritten); font-size: 1.1rem; color: var(--store-accent); margin-bottom: 0; }
+
+.add-to-cart-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px;
+  background: linear-gradient(135deg, var(--store-accent), var(--store-accent-hover));
+  color: white; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;
+  transition: var(--transition-base); position: relative; overflow: hidden;
+}
+
+.add-to-cart-btn:hover { transform: scale(1.05); box-shadow: var(--shadow-glow-pink); }
+
+.add-to-cart-btn.added { background: linear-gradient(135deg, #10b981, #059669); }
+
+/* Heart Burst Animation */
+.heart-burst { position: absolute; pointer-events: none; }
+.heart-burst span {
+  position: absolute; font-size: 1rem;
+  animation: burstOut 0.6s ease-out forwards;
+}
+
+@keyframes burstOut {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+/* Floating Cart */
+.floating-cart {
+  position: fixed; bottom: 90px; right: 24px; z-index: 1001;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--store-accent), var(--store-accent-hover));
+  display: none; align-items: center; justify-content: center;
+  color: white; font-size: 1.4rem; box-shadow: var(--shadow-glow-pink);
+  transition: var(--transition-bounce); cursor: pointer;
+}
+
+.floating-cart.has-items { display: flex; }
+.floating-cart:hover { transform: scale(1.1); }
+
+.cart-count {
+  position: absolute; top: -4px; right: -4px;
+  background: #1f2937; color: white;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); } 50% { transform: scale(1.3); } 100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .product-card { padding: 20px 16px; }
+  .product-emoji { font-size: 2.5rem; }
+  .floating-cart { bottom: 76px; right: 16px; width: 48px; height: 48px; }
+}
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto 32px; }
+}

@@ -1,0 +1,191 @@
+/* ============================================
+   PAGE 2: BONDU — Floral Scrapbook
+   ============================================ */
+
+#bondu {
+  background: var(--bondu-bg);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
+  position: relative;
+}
+
+/* Paper Texture Overlay */
+#bondu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Floral Corners */
+.floral-corner {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.floral-corner.top-left { top: 20px; left: 20px; transform: rotate(-15deg); }
+.floral-corner.top-right { top: 20px; right: 20px; transform: rotate(15deg); }
+.floral-corner.bottom-left { bottom: 20px; left: 20px; transform: rotate(15deg); }
+.floral-corner.bottom-right { bottom: 20px; right: 20px; transform: rotate(-15deg); }
+
+.bondu-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.bondu-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.bondu-title {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--bondu-accent-dark);
+  margin-bottom: 8px;
+}
+
+.bondu-subtitle {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--bondu-accent);
+}
+
+/* Polaroid Grid */
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.polaroid {
+  background: white;
+  padding: 16px 16px 48px;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: rotate(var(--rotation, -2deg));
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.polaroid:nth-child(2) { --rotation: 3deg; }
+.polaroid:nth-child(3) { --rotation: -1deg; }
+.polaroid:nth-child(4) { --rotation: 2deg; }
+.polaroid:nth-child(5) { --rotation: -3deg; }
+.polaroid:nth-child(6) { --rotation: 1deg; }
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  z-index: 5;
+}
+
+/* Tape Effect */
+.polaroid::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(var(--tape-rotation, 2deg));
+  width: 60px;
+  height: 24px;
+  background: var(--bondu-tape);
+  opacity: 0.8;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid:nth-child(2)::before { --tape-rotation: -3deg; }
+.polaroid:nth-child(3)::before { --tape-rotation: 1deg; }
+.polaroid:nth-child(4)::before { --tape-rotation: -1deg; }
+.polaroid:nth-child(5)::before { --tape-rotation: 2deg; }
+.polaroid:nth-child(6)::before { --tape-rotation: -2deg; }
+
+.polaroid-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #fde8d0, #f5d5b8);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.polaroid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  color: var(--bondu-accent);
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+.polaroid-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--bondu-text);
+  text-align: center;
+}
+
+/* Decorative Separator */
+.bondu-divider {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  letter-spacing: 16px;
+}
+
+.bondu-message {
+  text-align: center;
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--bondu-accent-dark);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 10px;
+  }
+
+  .polaroid {
+    padding: 10px 10px 36px;
+  }
+
+  .floral-corner {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
