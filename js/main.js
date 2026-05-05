@@ -155,6 +155,50 @@ function initFinalPage() {
   if (yesBtn2) yesBtn2.addEventListener('click', revealVideo);
 }
 
+/* ---- Helper: Inline all computed styles onto a cloned element tree ---- */
+function inlineComputedStyles(source, clone) {
+  const sourceStyles = window.getComputedStyle(source);
+  // Apply key visual properties that html2canvas may miss (CSS variables, fonts, etc.)
+  const props = [
+    'color', 'backgroundColor', 'background', 'backgroundImage',
+    'fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
+    'lineHeight', 'letterSpacing', 'textAlign', 'textDecoration',
+    'padding', 'margin', 'border', 'borderRadius',
+    'display', 'flexDirection', 'justifyContent', 'alignItems',
+    'width', 'maxWidth', 'minHeight',
+    'boxShadow', 'borderTop', 'borderBottom'
+  ];
+  props.forEach(prop => {
+    clone.style[prop] = sourceStyles[prop];
+  });
+  // Force full visibility
+  clone.style.opacity = '1';
+  clone.style.transform = 'none';
+  clone.style.transition = 'none';
+
+  const sourceChildren = source.children;
+  const cloneChildren = clone.children;
+  for (let i = 0; i < sourceChildren.length; i++) {
+    if (cloneChildren[i]) {
+      inlineComputedStyles(sourceChildren[i], cloneChildren[i]);
+    }
+  }
+}
+
+function preparePdfClone(element) {
+  const clone = element.cloneNode(true);
+  inlineComputedStyles(element, clone);
+
+  // Position off-screen so it doesn't flash
+  clone.style.position = 'fixed';
+  clone.style.left = '-9999px';
+  clone.style.top = '0';
+  clone.style.zIndex = '-1';
+  clone.style.opacity = '1';
+  document.body.appendChild(clone);
+  return clone;
+}
+
 /* ---- Love Letter PDF Download ---- */
 function initLetterDownload() {
   const downloadBtn = document.getElementById('download-letter-btn');
@@ -164,23 +208,28 @@ function initLetterDownload() {
     const element = document.querySelector('.letter-paper');
     if (!element) return;
 
-    const opt = {
-      margin:       10,
-      filename:     'Love_Letter.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
     const originalText = downloadBtn.innerHTML;
     downloadBtn.innerHTML = '⏳ Generating...';
     downloadBtn.disabled = true;
 
-    html2pdf().set(opt).from(element).save().then(() => {
+    // Clone and inline styles so html2canvas sees resolved values
+    const clone = preparePdfClone(element);
+
+    const opt = {
+      margin:       10,
+      filename:     'Love_Letter.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#faf6ee' },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(clone).save().then(() => {
+      clone.remove();
       downloadBtn.innerHTML = originalText;
       downloadBtn.disabled = false;
     }).catch(err => {
       console.error('PDF generation error:', err);
+      clone.remove();
       downloadBtn.innerHTML = '❌ Failed';
       setTimeout(() => {
         downloadBtn.innerHTML = originalText;

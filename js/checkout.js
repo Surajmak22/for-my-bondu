@@ -248,25 +248,29 @@ const Checkout = {
     const element = document.querySelector('.receipt-paper');
     if (!element) return;
 
-    // Temporarily adjust styles for better PDF output if needed
-    const opt = {
-      margin:       10,
-      filename:     'Love_Store_Receipt.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
     // Change button text while generating
     const originalText = this.downloadBtn.innerHTML;
     this.downloadBtn.innerHTML = '⏳ Generating...';
     this.downloadBtn.disabled = true;
 
-    html2pdf().set(opt).from(element).save().then(() => {
+    // Clone and inline all computed styles so html2canvas resolves CSS variables
+    const clone = preparePdfClone(element);
+
+    const opt = {
+      margin:       10,
+      filename:     'Love_Store_Receipt.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(clone).save().then(() => {
+      clone.remove();
       this.downloadBtn.innerHTML = originalText;
       this.downloadBtn.disabled = false;
     }).catch(err => {
       console.error('PDF generation error:', err);
+      clone.remove();
       this.downloadBtn.innerHTML = '❌ Failed to generate';
       setTimeout(() => {
         this.downloadBtn.innerHTML = originalText;
